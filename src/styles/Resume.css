@@ -1,0 +1,14 @@
+.resume-container {
+    background-color: var(--dark-blue);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.resume {
+    background-color: var(--blue);
+    width: 80%;
+    aspect-ratio: 0.7;
+    font-size: 1rem;
+}

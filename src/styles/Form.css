@@ -1,0 +1,11 @@
+.form-container {
+    background-color: var(--gray);
+    overflow: scroll;
+    height: 100vh;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.form-container::-webkit-scrollbar {
+    display: none;
+}

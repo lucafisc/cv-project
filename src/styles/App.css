@@ -1,0 +1,20 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --gray: #f2f2f2;
+  --dark-blue: #111726;
+  --blue: #eaeef9;
+  --red: #f9e3d9;
+  --yellow: #fffdde;
+}
+
+.App {
+  display: grid;
+  grid-template-columns: 5fr 6fr;
+}
