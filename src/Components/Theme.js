@@ -1,4 +1,10 @@
 export default function Theme(props) {
-  const { color } = props;
-  return <div className="theme" style={{ backgroundColor: color }}></div>;
+  const { color, changeBackground } = props;
+  return (
+    <div
+      onClick={() => changeBackground(color)}
+      className="theme"
+      style={{ backgroundColor: color }}
+    ></div>
+  );
 }

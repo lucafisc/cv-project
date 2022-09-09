@@ -1,7 +1,8 @@
-export default function Resume() {
+export default function Resume(props) {
+  const { background } = props;
   return (
     <div className="resume-container">
-      <div className="resume"></div>
+      <div style={{ backgroundColor: background }} className="resume"></div>
     </div>
   );
 }

@@ -7,8 +7,10 @@
 }
 
 .resume {
+    transition: background-color 1s ease-out;
     background-color: var(--blue);
     width: 80%;
     aspect-ratio: 0.7;
     font-size: 1rem;
+
 }
