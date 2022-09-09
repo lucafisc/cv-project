@@ -2,10 +2,63 @@
     background-color: var(--gray);
     overflow: scroll;
     height: 100vh;
+    padding: 20px;
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
 
 .form-container::-webkit-scrollbar {
     display: none;
+}
+
+.form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.logo {
+    font-family: var(--karrik);
+    font-size: 20px;
+    display: inline-block;
+}
+
+.logo::before {
+    content: "";
+    display: block;
+    border-top: var(--tick);
+    margin-top: 0.5em;
+}
+
+.theme-container {
+    padding-top: 20px;
+    display: flex;
+    gap: 10px;
+
+}
+
+.theme {
+    height: 30px;
+    width: 30px;
+    border: var(--light);
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: transform 0.2s ease-out;
+}
+
+.theme:hover {
+    transform: scale(1.1);
+}
+
+.theme:active {
+    transform: scale(0.95);
+}
+
+.wrap {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+    hyphens: manual;
 }
