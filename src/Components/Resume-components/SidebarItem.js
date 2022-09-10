@@ -1,3 +1,4 @@
 export default function SidebarItem(props) {
-  return <h4 className="sidebar-item"></h4>;
+  const { field } = props;
+  return field && <h4 className="sidebar-item">{field}</h4>;
 }

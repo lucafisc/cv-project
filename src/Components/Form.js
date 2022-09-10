@@ -1,13 +1,20 @@
 import React from "react";
 import Theme from "./Form-components/Theme";
 import CoverForm from "./Form-components/CoverForm";
+import ContactForm from "./Form-components/ContactForm";
 import Section from "./Form-components/Section";
 
 export default function Form(props) {
-  const { changeBackground, changeFormData, formData } = props;
+  const {
+    formData,
+    contactData,
+    changeBackground,
+    changeFormData,
+    changeContactData,
+  } = props;
   const [colors, setcolors] = React.useState(["#eaeef9", "#f9e3d9", "#fffdde"]);
   const themes = colors.map((color) => (
-    <Theme color={color} changeBackground={changeBackground} />
+    <Theme color={color} changeBackground={changeBackground} key={color} />
   ));
 
   return (
@@ -17,8 +24,11 @@ export default function Form(props) {
         <div className="theme-container">{themes}</div>
       </div>
       <div className="form">
-        <CoverForm changeFormData={changeFormData} formData={formData} />
-        <Section section="contact" />
+        <CoverForm formData={formData} changeFormData={changeFormData} />
+        <ContactForm
+          contactData={contactData}
+          changeContactData={changeContactData}
+        />
         <Section section="about" />
         <Section section="work" />
         <Section section="education" />

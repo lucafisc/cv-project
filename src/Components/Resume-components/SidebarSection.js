@@ -1,11 +1,15 @@
 import SidebarItem from "./SidebarItem";
 export default function SidebarSection(props) {
-  const { title, formData, fields } = props;
-  //   const { phone, email, address1, address2, nationality, age } = formData;
+  const { fields, title } = props;
+  const sideBarItems = [];
+  Object.keys(fields).forEach((key, index) => {
+    sideBarItems.push(<SidebarItem field={fields[key]} key={key} />);
+  });
 
   return (
     <div className="sidebar-section">
       <h1 className="section-title">{title}</h1>
+      {sideBarItems}
     </div>
   );
 }

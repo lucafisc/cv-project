@@ -17,32 +17,67 @@ function App() {
     }
   );
 
-  React.useEffect(() => {
-    localStorage.setItem("form", JSON.stringify(formData));
-  }, [formData]);
+  const [contactData, setContactData] = React.useState(
+    JSON.parse(localStorage.getItem("contact")) || {
+      phone: "",
+      email: "",
+      address1: "",
+      address2: "",
+      nationality: "",
+      age: "",
+    }
+  );
+
+  const [skillsData, setskillsData] = React.useState(
+    JSON.parse(localStorage.getItem("skills")) || ["aaa", "ddd"]
+  );
 
   React.useEffect(() => {
     localStorage.setItem("background", JSON.stringify(background));
   }, [background]);
 
-  function changeFormData(name, value) {
-    setFormData((prevFormData) => {
-      return { ...prevFormData, [name]: value };
-    });
-  }
+  React.useEffect(() => {
+    localStorage.setItem("form", JSON.stringify(formData));
+  }, [formData]);
+
+  React.useEffect(() => {
+    localStorage.setItem("contact", JSON.stringify(contactData));
+  }, [contactData]);
+
+  React.useEffect(() => {
+    localStorage.setItem("skills", JSON.stringify(skillsData));
+  }, [skillsData]);
 
   function changeBackground(color) {
     setBackground(color);
   }
 
+  function changeFormData(name, value) {
+    setFormData((prevData) => {
+      return { ...prevData, [name]: value };
+    });
+  }
+
+  function changeContactData(name, value) {
+    setContactData((prevData) => {
+      return { ...prevData, [name]: value };
+    });
+  }
+
   return (
     <div className="App">
-      <Resume background={background} formData={formData} />
-
+      <Resume
+        background={background}
+        formData={formData}
+        contactData={contactData}
+        skillsData={skillsData}
+      />
       <Form
+        formData={formData}
+        contactData={contactData}
         changeBackground={changeBackground}
         changeFormData={changeFormData}
-        formData={formData}
+        changeContactData={changeContactData}
       />
     </div>
   );
