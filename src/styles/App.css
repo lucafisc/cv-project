@@ -57,5 +57,5 @@
 
 .App {
   display: grid;
-  grid-template-columns: 5fr 6fr;
+  grid-template-columns: 6fr 5fr;
 }

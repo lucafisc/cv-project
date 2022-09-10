@@ -37,12 +37,13 @@ function App() {
 
   return (
     <div className="App">
+      <Resume background={background} formData={formData} />
+
       <Form
         changeBackground={changeBackground}
         changeFormData={changeFormData}
         formData={formData}
       />
-      <Resume background={background} formData={formData} />
     </div>
   );
 }
