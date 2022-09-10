@@ -34,6 +34,7 @@ function App() {
       <Form
         changeBackground={changeBackground}
         changeFormData={changeFormData}
+        formData={formData}
       />
       <Resume background={background} formData={formData} />
     </div>
