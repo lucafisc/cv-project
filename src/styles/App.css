@@ -12,28 +12,17 @@
 }
 
 @font-face {
-  font-family: 'Minipax';
+  font-family: 'Minipax-bold';
   src: url("../typefaces/Minipax-Bold.woff");
   font-style: bold;
 }
 
 @font-face {
   font-family: 'Minipax';
-  src: url("../typefaces/Minipax-Medium.woff");
-  font-style: bold;
-}
-
-@font-face {
-  font-family: 'Minipax';
   src: url("../typefaces/Minipax-Regular.woff");
-  font-style: bold;
+  font-style: normal;
 }
 
-@font-face {
-  font-family: 'Minipax';
-  src: url("../typefaces/Minipax-SemiBold.woff");
-  font-style: bold;
-}
 
 *,
 *::after,
@@ -51,12 +40,17 @@
     Times,
     serif;
   ;
+  --minipax-bold: 'Minipax-bold',
+    'Times New Roman',
+    Times,
+    serif;
+  ;
   --karrik: 'Karrik', Arial,
     Helvetica,
     sans-serif;
   ;
-  --tick: 5px solid;
-  --light: 2px solid;
+  --tick: 0.2em solid;
+  --light: 0.13em solid;
   --radius: 7px;
 }
 

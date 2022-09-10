@@ -15,6 +15,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    margin-bottom: 30px;
 }
 
 .logo {
@@ -53,6 +54,21 @@
 .theme:active {
     transform: scale(0.95);
 }
+
+.section {
+    font-family: var(--karrik);
+    font-style: italic;
+    font-size: 12px;
+}
+
+.section::before {
+    content: "";
+    display: block;
+    border-top: 2px dotted black;
+    margin-top: 0.5em;
+}
+
+
 
 .wrap {
     word-wrap: break-word;

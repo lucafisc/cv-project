@@ -11,6 +11,35 @@
     background-color: var(--blue);
     width: 80%;
     aspect-ratio: 0.7;
-    font-size: 1rem;
+    font-size: 1vw;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
 
+.first-name {
+    margin-top: 0.5em;
+    font-family: var(--minipax-bold);
+    font-size: 3.5em;
+    display: inline-block;
+}
+
+.first-name::before {
+    content: "";
+    display: block;
+    border-top: var(--tick);
+    margin-top: 0.5em;
+}
+
+.last-name {
+    margin-top: -0.2em;
+    font-family: var(--minipax);
+    font-weight: normal;
+    font-size: 3.5em;
+}
+
+.position {
+    margin-top: 0.5em;
+    font-family: var(--karrik);
+    font-size: 1.6em;
+    font-style: italic;
 }
