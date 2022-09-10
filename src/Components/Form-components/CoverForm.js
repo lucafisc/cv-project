@@ -1,11 +1,27 @@
 import Section from "./Section";
-
+import InputText from "./InputText";
 export default function CoverForm(props) {
-  const { section } = props;
+  const { changeFormData } = props;
   return (
     <>
       <Section section="cover" />
-      <input />
+      <div className="form-grid">
+        <InputText
+          name="firstName"
+          label="First name"
+          changeHandle={changeFormData}
+        />
+        <InputText
+          name="lastName"
+          label="Last name"
+          changeHandle={changeFormData}
+        />
+        <InputText
+          name="position"
+          label="Position"
+          changeHandle={changeFormData}
+        />
+      </div>
     </>
   );
 }

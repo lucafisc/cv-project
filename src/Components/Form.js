@@ -2,8 +2,9 @@ import React from "react";
 import Theme from "./Form-components/Theme";
 import CoverForm from "./Form-components/CoverForm";
 import Section from "./Form-components/Section";
+
 export default function Form(props) {
-  const { changeBackground } = props;
+  const { changeBackground, changeFormData } = props;
   const [colors, setcolors] = React.useState(["#eaeef9", "#f9e3d9", "#fffdde"]);
   const themes = colors.map((color) => (
     <Theme color={color} changeBackground={changeBackground} />
@@ -16,7 +17,7 @@ export default function Form(props) {
         <div className="theme-container">{themes}</div>
       </div>
       <div className="form">
-        <CoverForm />
+        <CoverForm changeFormData={changeFormData} />
         <Section section="contact" />
         <Section section="about" />
         <Section section="work" />

@@ -7,14 +7,29 @@ import Resume from "./Components/Resume";
 
 function App() {
   const [background, setBackground] = React.useState("#eaeef9");
+  const [formData, setFormData] = React.useState({
+    firstName: "",
+    lastName: "",
+    position: "",
+  });
+
+  function changeFormData(name, value) {
+    setFormData((prevFormData) => {
+      return { ...prevFormData, [name]: value };
+    });
+  }
+
   function changeBackground(color) {
     setBackground(color);
   }
 
   return (
     <div className="App">
-      <Form changeBackground={changeBackground} />
-      <Resume background={background} />
+      <Form
+        changeBackground={changeBackground}
+        changeFormData={changeFormData}
+      />
+      <Resume background={background} formData={formData} />
     </div>
   );
 }
