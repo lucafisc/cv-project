@@ -7,11 +7,17 @@ import Resume from "./Components/Resume";
 
 function App() {
   const [background, setBackground] = React.useState("#eaeef9");
-  const [formData, setFormData] = React.useState({
-    firstName: "",
-    lastName: "",
-    position: "",
-  });
+  const [formData, setFormData] = React.useState(
+    JSON.parse(localStorage.getItem("form")) || {
+      firstName: "",
+      lastName: "",
+      position: "",
+    }
+  );
+
+  React.useEffect(() => {
+    localStorage.setItem("form", JSON.stringify(formData));
+  }, [formData]);
 
   function changeFormData(name, value) {
     setFormData((prevFormData) => {
