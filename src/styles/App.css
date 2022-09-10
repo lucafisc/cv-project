@@ -51,6 +51,7 @@
   ;
   --tick: 0.2em solid black;
   --light: 0.13em solid black;
+  --dotted: 0.2em dotted black;
   --radius: 7px;
 }
 

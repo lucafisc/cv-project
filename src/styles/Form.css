@@ -65,7 +65,7 @@
 .section::before {
     content: "";
     display: block;
-    border-top: 2px dotted black;
+    border-top: var(--dotted);
     margin-top: 0.5em;
 }
 
@@ -119,4 +119,11 @@
     -moz-hyphens: auto;
     hyphens: auto;
     hyphens: manual;
+}
+
+
+@media only screen and (max-width: 650px) {
+    .form-header {
+        flex-direction: column;
+    }
 }
