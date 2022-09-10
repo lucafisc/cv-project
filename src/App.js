@@ -6,7 +6,9 @@ import Form from "./Components/Form";
 import Resume from "./Components/Resume";
 
 function App() {
-  const [background, setBackground] = React.useState("#eaeef9");
+  const [background, setBackground] = React.useState(
+    JSON.parse(localStorage.getItem("background")) || "#eaeef9"
+  );
   const [formData, setFormData] = React.useState(
     JSON.parse(localStorage.getItem("form")) || {
       firstName: "",
@@ -18,6 +20,10 @@ function App() {
   React.useEffect(() => {
     localStorage.setItem("form", JSON.stringify(formData));
   }, [formData]);
+
+  React.useEffect(() => {
+    localStorage.setItem("background", JSON.stringify(background));
+  }, [background]);
 
   function changeFormData(name, value) {
     setFormData((prevFormData) => {
