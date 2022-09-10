@@ -28,9 +28,10 @@ function App() {
     }
   );
 
-  const [skillsData, setskillsData] = React.useState(
-    JSON.parse(localStorage.getItem("skills")) || ["aaa", "ddd"]
-  );
+  const [skillsData, setskillsData] = React.useState([
+    "Html, CSS, Javascript",
+    "Git",
+  ]);
 
   React.useEffect(() => {
     localStorage.setItem("background", JSON.stringify(background));
@@ -75,6 +76,7 @@ function App() {
       <Form
         formData={formData}
         contactData={contactData}
+        skillsData={skillsData}
         changeBackground={changeBackground}
         changeFormData={changeFormData}
         changeContactData={changeContactData}

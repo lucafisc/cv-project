@@ -2,12 +2,14 @@ import React from "react";
 import Theme from "./Form-components/Theme";
 import CoverForm from "./Form-components/CoverForm";
 import ContactForm from "./Form-components/ContactForm";
+import Skillsform from "./Form-components/SkillsForm";
 import Section from "./Form-components/Section";
 
 export default function Form(props) {
   const {
     formData,
     contactData,
+    skillsData,
     changeBackground,
     changeFormData,
     changeContactData,
@@ -29,6 +31,7 @@ export default function Form(props) {
           contactData={contactData}
           changeContactData={changeContactData}
         />
+        <Skillsform skillsData={skillsData} />
         <Section section="about" />
         <Section section="work" />
         <Section section="education" />
