@@ -13,6 +13,8 @@ export default function Form(props) {
     changeBackground,
     changeFormData,
     changeContactData,
+    changeskillsData,
+    addSkill,
   } = props;
   const [colors, setcolors] = React.useState(["#eaeef9", "#f9e3d9", "#fffdde"]);
   const themes = colors.map((color) => (
@@ -31,7 +33,11 @@ export default function Form(props) {
           contactData={contactData}
           changeContactData={changeContactData}
         />
-        <Skillsform skillsData={skillsData} />
+        <Skillsform
+          skillsData={skillsData}
+          changeskillsData={changeskillsData}
+          addSkill={addSkill}
+        />
         <Section section="about" />
         <Section section="work" />
         <Section section="education" />

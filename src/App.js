@@ -28,10 +28,11 @@ function App() {
     }
   );
 
-  const [skillsData, setskillsData] = React.useState([
-    "Html, CSS, Javascript",
-    "Git",
-  ]);
+  const [skillsData, setskillsData] = React.useState(
+    JSON.parse(localStorage.getItem("skills")) || {
+      0: "",
+    }
+  );
 
   React.useEffect(() => {
     localStorage.setItem("background", JSON.stringify(background));
@@ -65,6 +66,34 @@ function App() {
     });
   }
 
+  function changeskillsData(name, value) {
+    setskillsData((prevData) => {
+      const newObj = { ...prevData, [name]: value };
+      const cleanedObj = {};
+      let newIndex = 0;
+      Object.keys(newObj).forEach((key) => {
+        if (newObj[key] !== "") {
+          cleanedObj[newIndex] = newObj[key];
+          newIndex++;
+        }
+      });
+      return cleanedObj;
+    });
+  }
+
+  //  function changeskillsData(name, value) {
+  //   setskillsData((prevData) => {
+  //     return { ...prevData, [name]: value };
+  //   });
+  // }
+
+  function addSkill() {
+    setskillsData((prevData) => {
+      const key = Object.keys(prevData).length + 1;
+      return { ...prevData, [key]: "" };
+    });
+  }
+
   return (
     <div className="App">
       <Resume
@@ -80,6 +109,8 @@ function App() {
         changeBackground={changeBackground}
         changeFormData={changeFormData}
         changeContactData={changeContactData}
+        changeskillsData={changeskillsData}
+        addSkill={addSkill}
       />
     </div>
   );
