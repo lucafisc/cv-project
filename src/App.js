@@ -72,6 +72,7 @@ function App() {
 
   React.useEffect(() => {
     localStorage.setItem("work", JSON.stringify(workData));
+    console.log(workData);
   }, [workData]);
 
   function changeBackground(color) {
@@ -118,13 +119,21 @@ function App() {
 
   function changeWorkData(key, value) {
     setWorkData((prevArray) => {
-      return prevArray.map((object, index) => {
+      const updatedArray = prevArray.map((object, index) => {
         if (index === key[0]) {
           return { ...object, [key[1]]: value };
         } else {
           return { ...object };
         }
       });
+      const cleanedArray = updatedArray.map((object, index) => {
+        const isEmpty = Object.values(object).every((value) => value === "");
+        if (!isEmpty) {
+          return object;
+        }
+      });
+      console.log(cleanedArray);
+      return updatedArray;
     });
   }
 

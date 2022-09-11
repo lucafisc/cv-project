@@ -19,6 +19,7 @@
 /* main */
 .main {
     padding-left: 1em;
+    padding-right: 3em;
 }
 
 .first-name {
@@ -107,6 +108,7 @@
 .work--title {
     font-family: var(--minipax);
     font-size: 1.6em;
+    margin-bottom: 0.5em;
 }
 
 .work--position,
@@ -116,7 +118,13 @@
     font-size: 1.1em;
 }
 
+.work--place {
+    margin-bottom: 0.5em;
+}
+
 .work--text {
     font-family: var(--karrik);
     font-size: 1.1em;
+    margin-bottom: 1em;
+
 }
