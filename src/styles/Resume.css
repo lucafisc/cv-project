@@ -103,3 +103,20 @@
     -moz-hyphens: auto;
     hyphens: auto;
 }
+
+.work--title {
+    font-family: var(--minipax);
+    font-size: 1.6em;
+}
+
+.work--position,
+.work--place {
+    font-family: var(--karrik);
+    font-style: italic;
+    font-size: 1.1em;
+}
+
+.work--text {
+    font-family: var(--karrik);
+    font-size: 1.1em;
+}

@@ -38,6 +38,16 @@ function App() {
     JSON.parse(localStorage.getItem("about")) || ""
   );
 
+  const [workData, setWorkData] = React.useState([
+    {
+      title: "",
+      position: "",
+      place: "",
+      time: "",
+      text: "",
+    },
+  ]);
+
   React.useEffect(() => {
     localStorage.setItem("background", JSON.stringify(background));
   }, [background]);
@@ -57,6 +67,10 @@ function App() {
   React.useEffect(() => {
     localStorage.setItem("about", JSON.stringify(aboutData));
   }, [aboutData]);
+
+  React.useEffect(() => {
+    localStorage.setItem("work", JSON.stringify(workData));
+  }, [workData]);
 
   function changeBackground(color) {
     setBackground(color);
@@ -100,6 +114,34 @@ function App() {
     setAboutData(value);
   }
 
+  function changeWorkData(key, value) {
+    console.log(workData[key[0]]);
+    setWorkData((prevArray) => {
+      return prevArray.map((object, index) => {
+        if (index === key[0]) {
+          return { ...object, [key[1]]: value };
+        } else {
+          return { ...object };
+        }
+      });
+    });
+  }
+
+  function addWork() {
+    setWorkData((prevData) => {
+      return [
+        ...prevData,
+        {
+          title: "",
+          position: "",
+          place: "",
+          time: "",
+          text: "",
+        },
+      ];
+    });
+  }
+
   return (
     <div className="App">
       <Resume
@@ -108,18 +150,22 @@ function App() {
         contactData={contactData}
         skillsData={skillsData}
         aboutData={aboutData}
+        workData={workData}
       />
       <Form
         formData={formData}
         contactData={contactData}
         skillsData={skillsData}
         aboutData={aboutData}
+        workData={workData}
         changeBackground={changeBackground}
         changeFormData={changeFormData}
         changeContactData={changeContactData}
         changeskillsData={changeskillsData}
         addSkill={addSkill}
         changeAboutData={changeAboutData}
+        changeWorkData={changeWorkData}
+        addWork={addWork}
       />
     </div>
   );

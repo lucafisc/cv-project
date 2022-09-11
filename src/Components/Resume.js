@@ -1,9 +1,16 @@
 import React from "react";
 import Cover from "./Resume-components/Cover";
 import About from "./Resume-components/About";
+import Work from "./Resume-components/Work";
+import SectionTitle from "./Resume-components/SectionTitle";
+
 import SidebarSection from "./Resume-components/SidebarSection";
 export default function Resume(props) {
-  const { background, formData, contactData, skillsData, aboutData } = props;
+  const { background, formData, contactData, skillsData, aboutData, workData } =
+    props;
+  const workDivs = workData.map((work) => {
+    return <Work workData={work} />;
+  });
   return (
     <div className="resume-container">
       <div style={{ backgroundColor: background }} className="resume">
@@ -16,6 +23,8 @@ export default function Resume(props) {
         </div>
         <div className="main">
           <Cover formData={formData} />
+          {workData.length > 0 && <SectionTitle title={"work"} />}
+          {workDivs}
         </div>
       </div>
     </div>

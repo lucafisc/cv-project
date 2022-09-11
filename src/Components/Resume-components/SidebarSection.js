@@ -1,4 +1,5 @@
 import SidebarItem from "./SidebarItem";
+import SectionTitle from "./SectionTitle";
 export default function SidebarSection(props) {
   const { fields, title } = props;
   const sideBarItems = [];
@@ -8,7 +9,7 @@ export default function SidebarSection(props) {
 
   return (
     <div className="sidebar-section">
-      <h1 className="section-title">{title}</h1>
+      <SectionTitle title={title} />
       {sideBarItems}
     </div>
   );
