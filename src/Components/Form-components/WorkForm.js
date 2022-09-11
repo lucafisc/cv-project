@@ -1,52 +1,55 @@
 import Section from "./Section";
 import InputText from "./InputText";
 export default function WorkForm(props) {
-  const { workData, index, changeWorkData, addWork } = props;
+  const { workData, index, changeWorkData, addWork, removeWork, length } =
+    props;
   const { title, position, place, time, text } = workData;
+  const isFirst = index === 0 ? true : false;
+  const isLast = index === length - 1 ? true : false;
+
   return (
     <>
-      <Section section="work" />
+      {isFirst && <Section section="work" />}
       <div className="form-grid">
         <InputText
-          key={index}
           name={[index, "title"]}
           value={title}
           label="title"
           changeHandle={changeWorkData}
         />
         <InputText
-          //   key={index}
-          //   name={[key]}
+          name={[index, "position"]}
           value={position}
           label="position"
-          //   changeHandle={changeskillsData}
+          changeHandle={changeWorkData}
         />
         <InputText
-          //   key={index}
-          //   name={[key]}
+          name={[index, "place"]}
           value={place}
           label="place"
-          //   changeHandle={changeskillsData}
+          changeHandle={changeWorkData}
         />
         <InputText
-          //   key={index}
-          //   name={[key]}
+          name={([index], "time")}
           value={time}
           label="time period"
-          //   changeHandle={changeskillsData}
+          changeHandle={changeWorkData}
         />
         <textarea
           className="textarea"
           value={text}
           label="text"
-          //   onChange={(event) => changeAboutData(event.target.value)}
-          //   type="textArea"
+          onChange={(event) =>
+            changeWorkData([index, "text"], event.target.value)
+          }
+          type="textArea"
         />
-        {
-          <button className="add-field" onClick={addWork}>
-            add work experience
-          </button>
-        }
+        <button
+          className="add-field"
+          onClick={() => (isLast ? addWork() : removeWork(index))}
+        >
+          {isLast ? "add work experience" : "remove entry"}
+        </button>
       </div>
     </>
   );

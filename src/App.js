@@ -38,15 +38,17 @@ function App() {
     JSON.parse(localStorage.getItem("about")) || ""
   );
 
-  const [workData, setWorkData] = React.useState([
-    {
-      title: "",
-      position: "",
-      place: "",
-      time: "",
-      text: "",
-    },
-  ]);
+  const [workData, setWorkData] = React.useState(
+    JSON.parse(localStorage.getItem("work")) || [
+      {
+        title: "",
+        position: "",
+        place: "",
+        time: "",
+        text: "",
+      },
+    ]
+  );
 
   React.useEffect(() => {
     localStorage.setItem("background", JSON.stringify(background));
@@ -115,7 +117,6 @@ function App() {
   }
 
   function changeWorkData(key, value) {
-    console.log(workData[key[0]]);
     setWorkData((prevArray) => {
       return prevArray.map((object, index) => {
         if (index === key[0]) {
@@ -139,6 +140,14 @@ function App() {
           text: "",
         },
       ];
+    });
+  }
+
+  function removeWork(key) {
+    setWorkData((prevData) => {
+      return prevData.filter((work, index) => {
+        return index !== key;
+      });
     });
   }
 
@@ -166,6 +175,7 @@ function App() {
         changeAboutData={changeAboutData}
         changeWorkData={changeWorkData}
         addWork={addWork}
+        removeWork={removeWork}
       />
     </div>
   );

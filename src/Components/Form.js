@@ -22,6 +22,7 @@ export default function Form(props) {
     changeAboutData,
     changeWorkData,
     addWork,
+    removeWork,
   } = props;
   const [colors, setcolors] = React.useState(["#eaeef9", "#f9e3d9", "#fffdde"]);
   const themes = colors.map((color) => (
@@ -30,10 +31,12 @@ export default function Form(props) {
   const workForms = workData.map((work, index) => {
     return (
       <WorkForm
+        length={workData.length}
         workData={work}
         index={index}
         changeWorkData={changeWorkData}
         addWork={addWork}
+        removeWork={removeWork}
       />
     );
   });
