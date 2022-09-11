@@ -59,7 +59,8 @@
     font-family: var(--karrik);
     font-style: italic;
     font-size: 12px;
-    margin-bottom: 20px;
+    margin-top: 30px;
+    margin-bottom: 15px;
 }
 
 .section::before {
@@ -97,7 +98,8 @@
 
 }
 
-.text-input {
+.text-input,
+.textarea {
     font-family: var(--karrik);
     font-size: 16px;
     margin-top: 5px;
@@ -109,8 +111,12 @@
     border-radius: var(--radius);
     text-indent: 10px;
     min-width: 0;
-
 }
+
+.textarea {
+    height: fit-content;
+}
+
 
 .add-field {
     font-family: var(--karrik);

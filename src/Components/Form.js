@@ -3,6 +3,7 @@ import Theme from "./Form-components/Theme";
 import CoverForm from "./Form-components/CoverForm";
 import ContactForm from "./Form-components/ContactForm";
 import Skillsform from "./Form-components/SkillsForm";
+import AboutForm from "./Form-components/AboutForm";
 import Section from "./Form-components/Section";
 
 export default function Form(props) {
@@ -10,11 +11,13 @@ export default function Form(props) {
     formData,
     contactData,
     skillsData,
+    aboutData,
     changeBackground,
     changeFormData,
     changeContactData,
     changeskillsData,
     addSkill,
+    changeAboutData,
   } = props;
   const [colors, setcolors] = React.useState(["#eaeef9", "#f9e3d9", "#fffdde"]);
   const themes = colors.map((color) => (
@@ -29,6 +32,7 @@ export default function Form(props) {
       </div>
       <div className="form">
         <CoverForm formData={formData} changeFormData={changeFormData} />
+        <AboutForm aboutData={aboutData} changeAboutData={changeAboutData} />
         <ContactForm
           contactData={contactData}
           changeContactData={changeContactData}
@@ -38,6 +42,7 @@ export default function Form(props) {
           changeskillsData={changeskillsData}
           addSkill={addSkill}
         />
+
         <Section section="about" />
         <Section section="work" />
         <Section section="education" />

@@ -34,6 +34,10 @@ function App() {
     }
   );
 
+  const [aboutData, setAboutData] = React.useState(
+    JSON.parse(localStorage.getItem("about")) || ""
+  );
+
   React.useEffect(() => {
     localStorage.setItem("background", JSON.stringify(background));
   }, [background]);
@@ -49,6 +53,10 @@ function App() {
   React.useEffect(() => {
     localStorage.setItem("skills", JSON.stringify(skillsData));
   }, [skillsData]);
+
+  React.useEffect(() => {
+    localStorage.setItem("about", JSON.stringify(aboutData));
+  }, [aboutData]);
 
   function changeBackground(color) {
     setBackground(color);
@@ -81,17 +89,15 @@ function App() {
     });
   }
 
-  //  function changeskillsData(name, value) {
-  //   setskillsData((prevData) => {
-  //     return { ...prevData, [name]: value };
-  //   });
-  // }
-
   function addSkill() {
     setskillsData((prevData) => {
       const key = Object.keys(prevData).length + 1;
       return { ...prevData, [key]: "" };
     });
+  }
+
+  function changeAboutData(value) {
+    setAboutData(value);
   }
 
   return (
@@ -101,16 +107,19 @@ function App() {
         formData={formData}
         contactData={contactData}
         skillsData={skillsData}
+        aboutData={aboutData}
       />
       <Form
         formData={formData}
         contactData={contactData}
         skillsData={skillsData}
+        aboutData={aboutData}
         changeBackground={changeBackground}
         changeFormData={changeFormData}
         changeContactData={changeContactData}
         changeskillsData={changeskillsData}
         addSkill={addSkill}
+        changeAboutData={changeAboutData}
       />
     </div>
   );

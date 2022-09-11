@@ -70,13 +70,18 @@
     content: "";
     display: block;
     border-top: 0.3em solid black;
-    margin-top: 0.5em;
+    margin-top: 0.8em;
     margin-bottom: -0.2em;
 }
 
 .sidebar-item {
     font-family: var(--karrik);
     font-size: 1.1em;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
 }
 
 .sidebar-item::before {
@@ -85,4 +90,16 @@
     border-top: var(--dotted);
     margin-top: 0.7em;
     margin-bottom: 0.5em;
+}
+
+.about {
+    font-style: italic;
+    font-family: var(--karrik);
+    font-size: 1.1em;
+    line-height: 1.2em;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
 }
