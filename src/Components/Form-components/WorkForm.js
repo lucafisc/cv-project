@@ -30,7 +30,7 @@ export default function WorkForm(props) {
           changeHandle={changeWorkData}
         />
         <InputText
-          name={([index], "time")}
+          name={[index, "time"]}
           value={time}
           label="time period"
           changeHandle={changeWorkData}
@@ -44,12 +44,16 @@ export default function WorkForm(props) {
           }
           type="textArea"
         />
-        <button
-          className="add-field"
-          onClick={() => (isLast ? addWork() : removeWork(index))}
-        >
-          {isLast ? "add work experience" : "remove entry"}
-        </button>
+        {!isFirst && (
+          <button className="add-field" onClick={() => removeWork(index)}>
+            remove entry
+          </button>
+        )}
+        {isLast && (
+          <button className="add-field" onClick={() => addWork(index)}>
+            add work experience
+          </button>
+        )}
       </div>
     </>
   );

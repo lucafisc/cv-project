@@ -5,8 +5,7 @@ import ContactForm from "./Form-components/ContactForm";
 import Skillsform from "./Form-components/SkillsForm";
 import AboutForm from "./Form-components/AboutForm";
 import WorkForm from "./Form-components/WorkForm";
-import Section from "./Form-components/Section";
-
+import EducationForm from "./Form-components/EducationForm";
 export default function Form(props) {
   const {
     formData,
@@ -14,6 +13,7 @@ export default function Form(props) {
     skillsData,
     aboutData,
     workData,
+    educationData,
     changeBackground,
     changeFormData,
     changeContactData,
@@ -23,6 +23,9 @@ export default function Form(props) {
     changeWorkData,
     addWork,
     removeWork,
+    changeEducationData,
+    addEducation,
+    removeEducation,
   } = props;
   const [colors, setcolors] = React.useState(["#eaeef9", "#f9e3d9", "#fffdde"]);
   const themes = colors.map((color) => (
@@ -41,6 +44,19 @@ export default function Form(props) {
     );
   });
 
+  const educationForms = educationData.map((education, index) => {
+    return (
+      <EducationForm
+        length={educationData.length}
+        educationData={education}
+        index={index}
+        changeEducationData={changeEducationData}
+        addEducation={addEducation}
+        removeEducation={removeEducation}
+      />
+    );
+  });
+
   return (
     <div className="form-container">
       <div className="form-header">
@@ -55,13 +71,12 @@ export default function Form(props) {
           changeContactData={changeContactData}
         />
         {workForms}
+        {educationForms}
         <Skillsform
           skillsData={skillsData}
           changeskillsData={changeskillsData}
           addSkill={addSkill}
         />
-
-        <Section section="education" />
       </div>
     </div>
   );

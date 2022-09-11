@@ -108,11 +108,12 @@
 .work--title {
     font-family: var(--minipax);
     font-size: 1.6em;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.4em;
 }
 
 .work--position,
-.work--place {
+.work--place,
+.work--time {
     font-family: var(--karrik);
     font-style: italic;
     font-size: 1.1em;
@@ -120,6 +121,12 @@
 
 .work--place {
     margin-bottom: 0.5em;
+    display: inline-block;
+}
+
+.work--time {
+    margin-left: 0.8em;
+    display: inline-block;
 }
 
 .work--text {

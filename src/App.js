@@ -50,6 +50,16 @@ function App() {
     ]
   );
 
+  const [educationData, setEducationData] = React.useState(
+    JSON.parse(localStorage.getItem("education")) || [
+      {
+        institution: "",
+        degree: "",
+        year: "",
+      },
+    ]
+  );
+
   React.useEffect(() => {
     localStorage.setItem("background", JSON.stringify(background));
   }, [background]);
@@ -72,8 +82,11 @@ function App() {
 
   React.useEffect(() => {
     localStorage.setItem("work", JSON.stringify(workData));
-    console.log(workData);
   }, [workData]);
+
+  React.useEffect(() => {
+    localStorage.setItem("education", JSON.stringify(educationData));
+  }, [educationData]);
 
   function changeBackground(color) {
     setBackground(color);
@@ -132,7 +145,6 @@ function App() {
           return object;
         }
       });
-      console.log(cleanedArray);
       return updatedArray;
     });
   }
@@ -160,6 +172,48 @@ function App() {
     });
   }
 
+  function changeEducationData(key, value) {
+    setEducationData((prevArray) => {
+      const updatedArray = prevArray.map((object, index) => {
+        if (index === key[0]) {
+          return { ...object, [key[1]]: value };
+        } else {
+          return { ...object };
+        }
+      });
+      const cleanedArray = updatedArray.map((object, index) => {
+        const isEmpty = Object.values(object).every((value) => value === "");
+        if (!isEmpty) {
+          return object;
+        }
+      });
+      return updatedArray;
+    });
+  }
+
+  function addEducation() {
+    setEducationData((prevData) => {
+      return [
+        ...prevData,
+        {
+          title: "",
+          position: "",
+          place: "",
+          time: "",
+          text: "",
+        },
+      ];
+    });
+  }
+
+  function removeEducation(key) {
+    setEducationData((prevData) => {
+      return prevData.filter((work, index) => {
+        return index !== key;
+      });
+    });
+  }
+
   return (
     <div className="App">
       <Resume
@@ -169,6 +223,7 @@ function App() {
         skillsData={skillsData}
         aboutData={aboutData}
         workData={workData}
+        educationData={educationData}
       />
       <Form
         formData={formData}
@@ -176,6 +231,7 @@ function App() {
         skillsData={skillsData}
         aboutData={aboutData}
         workData={workData}
+        educationData={educationData}
         changeBackground={changeBackground}
         changeFormData={changeFormData}
         changeContactData={changeContactData}
@@ -185,6 +241,9 @@ function App() {
         changeWorkData={changeWorkData}
         addWork={addWork}
         removeWork={removeWork}
+        changeEducationData={changeEducationData}
+        addEducation={addEducation}
+        removeEducation={removeEducation}
       />
     </div>
   );
