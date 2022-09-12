@@ -20,7 +20,7 @@ export default function Skillsform(props) {
       <Section section="skills" />
       <div className="form-grid">
         {skillsInput}
-        <button onClick={addSkill} className="add-field">
+        <button onClick={addSkill} className="button">
           add skill
         </button>
       </div>
