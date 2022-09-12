@@ -45,12 +45,12 @@ export default function WorkForm(props) {
           type="textArea"
         />
         {!isFirst && (
-          <button className="add-field" onClick={() => removeWork(index)}>
+          <button className="button" onClick={() => removeWork(index)}>
             remove entry
           </button>
         )}
         {isLast && (
-          <button className="add-field" onClick={() => addWork(index)}>
+          <button className="button" onClick={() => addWork(index)}>
             add work experience
           </button>
         )}
