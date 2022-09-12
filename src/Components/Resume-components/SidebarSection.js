@@ -6,10 +6,9 @@ export default function SidebarSection(props) {
   Object.keys(fields).forEach((key, index) => {
     sideBarItems.push(<SidebarItem field={fields[key]} key={key} />);
   });
-
   return (
     <div className="sidebar-section">
-      <SectionTitle title={title} />
+      {sideBarItems && <SectionTitle title={title} />}
       {sideBarItems}
     </div>
   );
