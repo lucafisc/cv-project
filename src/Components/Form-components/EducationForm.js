@@ -36,12 +36,12 @@ export default function EducationForm(props) {
           changeHandle={changeEducationData}
         />
         {!isFirst && (
-          <button className="add-field" onClick={() => removeEducation(index)}>
+          <button className="button" onClick={() => removeEducation(index)}>
             remove entry
           </button>
         )}
         {isLast && (
-          <button className="add-field" onClick={() => addEducation(index)}>
+          <button className="button" onClick={() => addEducation(index)}>
             add education
           </button>
         )}
