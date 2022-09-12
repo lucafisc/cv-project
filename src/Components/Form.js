@@ -9,6 +9,7 @@ import EducationForm from "./Form-components/EducationForm";
 export default function Form(props) {
   const {
     sampleData,
+    clearData,
     formData,
     contactData,
     skillsData,
@@ -70,7 +71,9 @@ export default function Form(props) {
           <button onClick={sampleData} className="button">
             sample data
           </button>
-          <button className="button">download cv</button>
+          <button onClick={clearData} className="button">
+            clear data
+          </button>
         </div>
         <CoverForm formData={formData} changeFormData={changeFormData} />
         <AboutForm aboutData={aboutData} changeAboutData={changeAboutData} />

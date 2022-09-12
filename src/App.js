@@ -29,9 +29,7 @@ function App() {
   );
 
   const [skillsData, setskillsData] = React.useState(
-    JSON.parse(localStorage.getItem("skills")) || {
-      0: "",
-    }
+    JSON.parse(localStorage.getItem("skills")) || {}
   );
 
   const [aboutData, setAboutData] = React.useState(
@@ -87,6 +85,83 @@ function App() {
   React.useEffect(() => {
     localStorage.setItem("education", JSON.stringify(educationData));
   }, [educationData]);
+
+  function sampleData() {
+    setFormData({
+      firstName: "John",
+      lastName: "Appleseed",
+      position: "Frontend developer",
+    });
+    setContactData({
+      phone: "0156 32029374",
+      email: "john@sample.com",
+      address1: "Musterstraße 42",
+      address2: "10142 Berlin",
+      nationality: "Italian",
+      age: "30 years old",
+    });
+    setskillsData({ 0: "HTML, CSS, Javascript", 1: "React", 2: "Git" });
+    setWorkData([
+      {
+        place: "Berlin - DE",
+        position: "Frontend developer",
+        text: "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+        time: "01/20 - 12/22",
+        title: "Sample Workplace",
+      },
+      {
+        place: "Berlin - DE",
+        position: "Intern",
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..",
+        time: "06/18 - 12/19",
+        title: "Another workplace",
+      },
+    ]);
+    setAboutData(
+      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur duis aute irure dolor in reprehenderit in voluptate velit esse. "
+    );
+    setEducationData([
+      {
+        institution: "University Sample",
+        degree: "Computer Science",
+        year: "2015-2018",
+      },
+    ]);
+  }
+
+  function clearData() {
+    setFormData({
+      firstName: "",
+      lastName: "",
+      position: "",
+    });
+    setContactData({
+      phone: "",
+      email: "",
+      address1: "",
+      address2: "",
+      nationality: "",
+      age: "",
+    });
+    setskillsData({});
+    setWorkData([
+      {
+        place: "",
+        position: "",
+        text: "",
+        time: "",
+        title: "",
+      },
+    ]);
+    setAboutData("");
+    setEducationData([
+      {
+        institution: "",
+        degree: "",
+        year: "",
+      },
+    ]);
+  }
 
   function changeBackground(color) {
     setBackground(color);
@@ -226,6 +301,8 @@ function App() {
         educationData={educationData}
       />
       <Form
+        sampleData={sampleData}
+        clearData={clearData}
         formData={formData}
         contactData={contactData}
         skillsData={skillsData}
