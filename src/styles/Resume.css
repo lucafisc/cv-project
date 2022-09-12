@@ -105,7 +105,8 @@
     hyphens: auto;
 }
 
-.work--title {
+.work--title,
+.education--insitution {
     font-family: var(--minipax);
     font-size: 1.6em;
     margin-bottom: 0.4em;
@@ -113,7 +114,9 @@
 
 .work--position,
 .work--place,
-.work--time {
+.work--time,
+.education--degree,
+.education--year {
     font-family: var(--karrik);
     font-style: italic;
     font-size: 1.1em;
