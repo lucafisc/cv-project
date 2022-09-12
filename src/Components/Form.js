@@ -8,6 +8,7 @@ import WorkForm from "./Form-components/WorkForm";
 import EducationForm from "./Form-components/EducationForm";
 export default function Form(props) {
   const {
+    sampleData,
     formData,
     contactData,
     skillsData,
@@ -63,7 +64,14 @@ export default function Form(props) {
         <h3 className="logo">CV Generator</h3>
         <div className="theme-container">{themes}</div>
       </div>
+
       <div className="form">
+        <div className="form-grid">
+          <button onClick={sampleData} className="button">
+            sample data
+          </button>
+          <button className="button">download cv</button>
+        </div>
         <CoverForm formData={formData} changeFormData={changeFormData} />
         <AboutForm aboutData={aboutData} changeAboutData={changeAboutData} />
         <ContactForm
