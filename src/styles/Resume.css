@@ -140,3 +140,22 @@
     margin-bottom: 1em;
 
 }
+
+.download {
+    font-family: var(--karrik);
+    font-size: 16px;
+    height: 35px;
+    outline: none;
+    background-color: var(--gray);
+    border: var(--light);
+    border-radius: var(--radius);
+    padding: 0 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease-out;
+}
+
+.download:active {
+    background-color: black;
+    color: var(--gray);
+    transform: scale(0.95);
+}

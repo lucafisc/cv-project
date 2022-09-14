@@ -4,6 +4,7 @@ import About from "./Resume-components/About";
 import Work from "./Resume-components/Work";
 import Education from "./Resume-components/Education";
 import SectionTitle from "./Resume-components/SectionTitle";
+import html2pdf from "html2pdf.js";
 import SidebarSection from "./Resume-components/SidebarSection";
 export default function Resume(props) {
   const {
@@ -36,13 +37,24 @@ export default function Resume(props) {
     const areAllEmpty = isEmpty.every((value) => value === true);
     return areAllEmpty;
   }
-  function generatePDF() {
-    const resume = document.querySelector("#resume");
-  }
-
   const noWorkInfo = checkIfEmpty(workData);
   const noEducationInfo = checkIfEmpty(educationData);
   const noContactData = checkIfEmpty([contactData]);
+  function downloadResume() {
+    const element = document.getElementById("resume");
+    const opt = {
+      margin: 0,
+      filename: "resume.pdf",
+      image: { type: "jpeg", quality: 1 },
+      html2canvas: {},
+      jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+    };
+    html2pdf()
+      .from(element)
+      .set(opt)
+      .save();
+  }
+
   return (
     <div className="resume-container">
       <div
@@ -67,7 +79,9 @@ export default function Resume(props) {
           {educationDivs}
         </div>
       </div>
-      <button onClick={generatePDF}>download</button>
+      <button className="download" onClick={downloadResume}>
+        download
+      </button>
     </div>
   );
 }
