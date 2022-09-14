@@ -4,7 +4,6 @@ import About from "./Resume-components/About";
 import Work from "./Resume-components/Work";
 import Education from "./Resume-components/Education";
 import SectionTitle from "./Resume-components/SectionTitle";
-
 import SidebarSection from "./Resume-components/SidebarSection";
 export default function Resume(props) {
   const {
@@ -37,12 +36,20 @@ export default function Resume(props) {
     const areAllEmpty = isEmpty.every((value) => value === true);
     return areAllEmpty;
   }
+  function generatePDF() {
+    const resume = document.querySelector("#resume");
+  }
+
   const noWorkInfo = checkIfEmpty(workData);
   const noEducationInfo = checkIfEmpty(educationData);
   const noContactData = checkIfEmpty([contactData]);
   return (
     <div className="resume-container">
-      <div style={{ backgroundColor: background }} className="resume">
+      <div
+        style={{ backgroundColor: background }}
+        className="resume"
+        id="resume"
+      >
         <div className="sidebar">
           {aboutData.length > 0 && <About aboutData={aboutData} />}
           {!noContactData && (
@@ -60,6 +67,7 @@ export default function Resume(props) {
           {educationDivs}
         </div>
       </div>
+      <button onClick={generatePDF}>download</button>
     </div>
   );
 }
