@@ -15,8 +15,11 @@
   },
   "scripts": {
 <<<<<<< HEAD
+<<<<<<< HEAD
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
+=======
+>>>>>>> parent of aa32306 (Add homepage)
 =======
 >>>>>>> parent of aa32306 (Add homepage)
     "start": "react-scripts start",
