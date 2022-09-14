@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/cv-project/static/css/main.afc9d5a8.css",
+    "main.js": "/cv-project/static/js/main.a1336fdc.js",
+    "static/media/Minipax-Bold.woff": "/cv-project/static/media/Minipax-Bold.4e3d0505a2b0e4c20e2a.woff",
+    "static/media/Minipax-Regular.woff": "/cv-project/static/media/Minipax-Regular.a970f0fa13265e86e289.woff",
+    "static/media/Karrik-Regular.woff": "/cv-project/static/media/Karrik-Regular.1349fe0dc799d1851315.woff",
+    "static/media/Karrik-Italic.woff": "/cv-project/static/media/Karrik-Italic.33dbcad484ae4e230d28.woff",
+    "index.html": "/cv-project/index.html",
+    "main.afc9d5a8.css.map": "/cv-project/static/css/main.afc9d5a8.css.map",
+    "main.a1336fdc.js.map": "/cv-project/static/js/main.a1336fdc.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.afc9d5a8.css",
+    "static/js/main.a1336fdc.js"
+  ]
+}
