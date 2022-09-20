@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useRef } from "react";
 import Cover from "./Resume-components/Cover";
 import About from "./Resume-components/About";
 import Work from "./Resume-components/Work";
 import Education from "./Resume-components/Education";
 import SectionTitle from "./Resume-components/SectionTitle";
-import html2pdf from "html2pdf.js";
+import { useReactToPrint } from "react-to-print";
 import SidebarSection from "./Resume-components/SidebarSection";
 export default function Resume(props) {
   const {
@@ -40,20 +40,10 @@ export default function Resume(props) {
   const noWorkInfo = checkIfEmpty(workData);
   const noEducationInfo = checkIfEmpty(educationData);
   const noContactData = checkIfEmpty([contactData]);
-  function downloadResume() {
-    const element = document.getElementById("resume");
-    const opt = {
-      margin: 0,
-      filename: "resume.pdf",
-      image: { type: "jpeg", quality: 1 },
-      html2canvas: {},
-      jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
-    };
-    html2pdf()
-      .from(element)
-      .set(opt)
-      .save();
-  }
+  const componentRef = document.getElementById("resume");
+  const handlePrint = useReactToPrint({
+    content: () => componentRef,
+  });
 
   return (
     <div className="resume-container">
@@ -79,7 +69,7 @@ export default function Resume(props) {
           {educationDivs}
         </div>
       </div>
-      <button className="download" onClick={downloadResume}>
+      <button className="download" onClick={handlePrint}>
         download
       </button>
     </div>

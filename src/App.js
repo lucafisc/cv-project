@@ -4,6 +4,14 @@ import "./styles/Form.css";
 import "./styles/Resume.css";
 import Form from "./Components/Form";
 import Resume from "./Components/Resume";
+import useForm from "./Hooks/useForm";
+import { createContext } from "react";
+
+export const Context = createContext();
+const ContextProvider = ({ children }) => {
+  const data = "test-data";
+  return <Context.Provider value={data} children={children} />;
+};
 
 function App() {
   const [background, setBackground] = React.useState(
@@ -290,39 +298,41 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <Resume
-        background={background}
-        formData={formData}
-        contactData={contactData}
-        skillsData={skillsData}
-        aboutData={aboutData}
-        workData={workData}
-        educationData={educationData}
-      />
-      <Form
-        sampleData={sampleData}
-        clearData={clearData}
-        formData={formData}
-        contactData={contactData}
-        skillsData={skillsData}
-        aboutData={aboutData}
-        workData={workData}
-        educationData={educationData}
-        changeBackground={changeBackground}
-        changeFormData={changeFormData}
-        changeContactData={changeContactData}
-        changeskillsData={changeskillsData}
-        addSkill={addSkill}
-        changeAboutData={changeAboutData}
-        changeWorkData={changeWorkData}
-        addWork={addWork}
-        removeWork={removeWork}
-        changeEducationData={changeEducationData}
-        addEducation={addEducation}
-        removeEducation={removeEducation}
-      />
-    </div>
+    <ContextProvider>
+      <div className="App">
+        <Resume
+          background={background}
+          formData={formData}
+          contactData={contactData}
+          skillsData={skillsData}
+          aboutData={aboutData}
+          workData={workData}
+          educationData={educationData}
+        />
+        <Form
+          sampleData={sampleData}
+          clearData={clearData}
+          formData={formData}
+          contactData={contactData}
+          skillsData={skillsData}
+          aboutData={aboutData}
+          workData={workData}
+          educationData={educationData}
+          changeBackground={changeBackground}
+          changeFormData={changeFormData}
+          changeContactData={changeContactData}
+          changeskillsData={changeskillsData}
+          addSkill={addSkill}
+          changeAboutData={changeAboutData}
+          changeWorkData={changeWorkData}
+          addWork={addWork}
+          removeWork={removeWork}
+          changeEducationData={changeEducationData}
+          addEducation={addEducation}
+          removeEducation={removeEducation}
+        />
+      </div>
+    </ContextProvider>
   );
 }
 
