@@ -1,8 +1,9 @@
 import Section from "./Section";
-import InputText from "./InputText";
+import { dataContext } from "../../dataContext";
+import { useContext } from "react";
 
-export default function AboutForm(props) {
-  const { aboutData, changeAboutData } = props;
+export default function AboutForm() {
+  const { aboutData, changeAboutData } = useContext(dataContext);
   return (
     <>
       <Section section="about" />

@@ -32,10 +32,6 @@ function App() {
     JSON.parse(localStorage.getItem("skills")) || {}
   );
 
-  const [aboutData, setAboutData] = React.useState(
-    JSON.parse(localStorage.getItem("about")) || ""
-  );
-
   const [workData, setWorkData] = React.useState(
     JSON.parse(localStorage.getItem("work")) || [
       {
@@ -73,10 +69,6 @@ function App() {
   React.useEffect(() => {
     localStorage.setItem("skills", JSON.stringify(skillsData));
   }, [skillsData]);
-
-  React.useEffect(() => {
-    localStorage.setItem("about", JSON.stringify(aboutData));
-  }, [aboutData]);
 
   React.useEffect(() => {
     localStorage.setItem("work", JSON.stringify(workData));
@@ -117,9 +109,9 @@ function App() {
         title: "Another workplace",
       },
     ]);
-    setAboutData(
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur duis aute irure dolor in reprehenderit in voluptate velit esse. "
-    );
+    // setAboutData(
+    //   "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur duis aute irure dolor in reprehenderit in voluptate velit esse. "
+    // );
     setEducationData([
       {
         institution: "University Sample",
@@ -153,7 +145,7 @@ function App() {
         title: "",
       },
     ]);
-    setAboutData("");
+    // setAboutData("");
     setEducationData([
       {
         institution: "",
@@ -199,10 +191,6 @@ function App() {
       const key = Object.keys(prevData).length + 1;
       return { ...prevData, [key]: "" };
     });
-  }
-
-  function changeAboutData(value) {
-    setAboutData(value);
   }
 
   function changeWorkData(key, value) {
@@ -296,7 +284,6 @@ function App() {
         formData={formData}
         contactData={contactData}
         skillsData={skillsData}
-        aboutData={aboutData}
         workData={workData}
         educationData={educationData}
       />
@@ -306,7 +293,6 @@ function App() {
         formData={formData}
         contactData={contactData}
         skillsData={skillsData}
-        aboutData={aboutData}
         workData={workData}
         educationData={educationData}
         changeBackground={changeBackground}
@@ -314,7 +300,6 @@ function App() {
         changeContactData={changeContactData}
         changeskillsData={changeskillsData}
         addSkill={addSkill}
-        changeAboutData={changeAboutData}
         changeWorkData={changeWorkData}
         addWork={addWork}
         removeWork={removeWork}

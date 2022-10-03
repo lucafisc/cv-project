@@ -1,15 +1,14 @@
-import React, { createContext } from "react";
-import { useContext } from "react";
+import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
+import { DataContextProvider } from "./dataContext";
 document.title = "CV Generator";
 const root = ReactDOM.createRoot(document.getElementById("root"));
-const ThemeContext = createContext();
 root.render(
   <React.StrictMode>
-    <ThemeContext.Provider value={"light"}>
+    <DataContextProvider>
       <App />
-    </ThemeContext.Provider>
+    </DataContextProvider>
   </React.StrictMode>
 );

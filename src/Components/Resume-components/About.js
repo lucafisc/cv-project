@@ -1,4 +1,8 @@
-export default function About(props) {
-  const { aboutData } = props;
-  return <h4 className="about">{aboutData}</h4>;
+import { dataContext } from "../../dataContext";
+import { useContext } from "react";
+
+export default function About() {
+  const { aboutData } = useContext(dataContext);
+
+  return aboutData.length > 0 && <h4 className="about">{aboutData}</h4>;
 }

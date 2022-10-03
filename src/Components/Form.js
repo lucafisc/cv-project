@@ -76,7 +76,7 @@ export default function Form(props) {
           </button>
         </div>
         <CoverForm formData={formData} changeFormData={changeFormData} />
-        <AboutForm aboutData={aboutData} changeAboutData={changeAboutData} />
+        <AboutForm />
         <ContactForm
           contactData={contactData}
           changeContactData={changeContactData}

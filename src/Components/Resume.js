@@ -6,13 +6,17 @@ import Education from "./Resume-components/Education";
 import SectionTitle from "./Resume-components/SectionTitle";
 import html2pdf from "html2pdf.js";
 import SidebarSection from "./Resume-components/SidebarSection";
+import { dataContext } from "../dataContext";
+import { useContext } from "react";
+
 export default function Resume(props) {
+  const { aboutData } = useContext(dataContext);
+
   const {
     background,
     formData,
     contactData,
     skillsData,
-    aboutData,
     workData,
     educationData,
   } = props;
@@ -49,10 +53,7 @@ export default function Resume(props) {
       html2canvas: {},
       jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
     };
-    html2pdf()
-      .from(element)
-      .set(opt)
-      .save();
+    html2pdf().from(element).set(opt).save();
   }
 
   return (
@@ -63,7 +64,7 @@ export default function Resume(props) {
         id="resume"
       >
         <div className="sidebar">
-          {aboutData.length > 0 && <About aboutData={aboutData} />}
+          <About />
           {!noContactData && (
             <SidebarSection title="contact" fields={contactData} />
           )}
