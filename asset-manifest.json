@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/cv-project/static/css/main.623f93b0.css",
-    "main.js": "/cv-project/static/js/main.d64cc83b.js",
+    "main.js": "/cv-project/static/js/main.313b9ab6.js",
     "static/js/703.5e447590.chunk.js": "/cv-project/static/js/703.5e447590.chunk.js",
     "static/js/573.c9ae9c0c.chunk.js": "/cv-project/static/js/573.c9ae9c0c.chunk.js",
     "static/media/Minipax-Bold.woff": "/cv-project/static/media/Minipax-Bold.4e3d0505a2b0e4c20e2a.woff",
@@ -10,12 +10,12 @@
     "static/media/Karrik-Italic.woff": "/cv-project/static/media/Karrik-Italic.33dbcad484ae4e230d28.woff",
     "index.html": "/cv-project/index.html",
     "main.623f93b0.css.map": "/cv-project/static/css/main.623f93b0.css.map",
-    "main.d64cc83b.js.map": "/cv-project/static/js/main.d64cc83b.js.map",
+    "main.313b9ab6.js.map": "/cv-project/static/js/main.313b9ab6.js.map",
     "703.5e447590.chunk.js.map": "/cv-project/static/js/703.5e447590.chunk.js.map",
     "573.c9ae9c0c.chunk.js.map": "/cv-project/static/js/573.c9ae9c0c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.623f93b0.css",
-    "static/js/main.d64cc83b.js"
+    "static/js/main.313b9ab6.js"
   ]
 }
