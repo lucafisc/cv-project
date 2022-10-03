@@ -1,5 +1,8 @@
 import SidebarItem from "./SidebarItem";
 import SectionTitle from "./SectionTitle";
+import { dataContext } from "../../dataContext";
+import { useContext } from "react";
+
 export default function SidebarSection(props) {
   const { fields, title } = props;
   const sideBarItems = [];

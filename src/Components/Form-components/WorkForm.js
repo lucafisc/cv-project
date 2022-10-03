@@ -1,8 +1,12 @@
 import Section from "./Section";
 import InputText from "./InputText";
+import { dataContext } from "../../dataContext";
+import { useContext } from "react";
+
 export default function WorkForm(props) {
-  const { workData, index, changeWorkData, addWork, removeWork, length } =
-    props;
+  const { workData, index, length } = props;
+  const { changeWorkData, addWork, removeWork } = useContext(dataContext);
+
   const { title, position, place, time, text } = workData;
   const isFirst = index === 0 ? true : false;
   const isLast = index === length - 1 ? true : false;

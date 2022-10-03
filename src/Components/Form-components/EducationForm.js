@@ -1,15 +1,15 @@
 import Section from "./Section";
 import InputText from "./InputText";
+import { dataContext } from "../../dataContext";
+import { useContext } from "react";
+
 export default function EducationForm(props) {
-  const {
-    educationData,
-    index,
-    changeEducationData,
-    addEducation,
-    removeEducation,
-    length,
-  } = props;
+  const { educationData, index, length } = props;
   const { institution, degree, year } = educationData;
+
+  const { changeEducationData, addEducation, removeEducation } =
+    useContext(dataContext);
+
   const isFirst = index === 0 ? true : false;
   const isLast = index === length - 1 ? true : false;
 

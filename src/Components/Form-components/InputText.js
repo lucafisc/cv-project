@@ -1,3 +1,6 @@
+import { dataContext } from "../../dataContext";
+import { useContext } from "react";
+
 export default function InputText(props) {
   const { label, name, changeHandle, value } = props;
   return (

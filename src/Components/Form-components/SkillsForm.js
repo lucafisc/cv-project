@@ -1,7 +1,10 @@
 import Section from "./Section";
 import InputText from "./InputText";
-export default function Skillsform(props) {
-  const { skillsData, changeskillsData, addSkill } = props;
+import { dataContext } from "../../dataContext";
+import { useContext } from "react";
+
+export default function Skillsform() {
+  const { skillsData, changeskillsData, addSkill } = useContext(dataContext);
   const skillsInput = [];
   Object.keys(skillsData).forEach((key, index) => {
     skillsInput.push(

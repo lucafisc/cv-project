@@ -10,16 +10,9 @@ import { dataContext } from "../dataContext";
 import { useContext } from "react";
 
 export default function Resume(props) {
-  const { aboutData } = useContext(dataContext);
+  const { workData, educationData, background, contactData, skillsData } =
+    useContext(dataContext);
 
-  const {
-    background,
-    formData,
-    contactData,
-    skillsData,
-    workData,
-    educationData,
-  } = props;
   const workDivs = workData.map((work) => {
     return <Work workData={work} />;
   });
@@ -73,7 +66,7 @@ export default function Resume(props) {
           )}
         </div>
         <div className="main">
-          <Cover formData={formData} />
+          <Cover />
           {!noWorkInfo && <SectionTitle title={"work"} />}
           {workDivs}
           {!noEducationInfo && <SectionTitle title={"education"} />}

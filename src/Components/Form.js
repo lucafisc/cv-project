@@ -6,44 +6,18 @@ import Skillsform from "./Form-components/SkillsForm";
 import AboutForm from "./Form-components/AboutForm";
 import WorkForm from "./Form-components/WorkForm";
 import EducationForm from "./Form-components/EducationForm";
+import { dataContext } from "../dataContext";
+import { useContext } from "react";
+
 export default function Form(props) {
-  const {
-    sampleData,
-    clearData,
-    formData,
-    contactData,
-    skillsData,
-    aboutData,
-    workData,
-    educationData,
-    changeBackground,
-    changeFormData,
-    changeContactData,
-    changeskillsData,
-    addSkill,
-    changeAboutData,
-    changeWorkData,
-    addWork,
-    removeWork,
-    changeEducationData,
-    addEducation,
-    removeEducation,
-  } = props;
+  const { sampleData, clearData, workData, educationData, changeBackground } =
+    useContext(dataContext);
   const [colors, setcolors] = React.useState(["#eaeef9", "#f9e3d9", "#fffdde"]);
   const themes = colors.map((color) => (
     <Theme color={color} changeBackground={changeBackground} key={color} />
   ));
   const workForms = workData.map((work, index) => {
-    return (
-      <WorkForm
-        length={workData.length}
-        workData={work}
-        index={index}
-        changeWorkData={changeWorkData}
-        addWork={addWork}
-        removeWork={removeWork}
-      />
-    );
+    return <WorkForm length={workData.length} workData={work} index={index} />;
   });
 
   const educationForms = educationData.map((education, index) => {
@@ -52,9 +26,6 @@ export default function Form(props) {
         length={educationData.length}
         educationData={education}
         index={index}
-        changeEducationData={changeEducationData}
-        addEducation={addEducation}
-        removeEducation={removeEducation}
       />
     );
   });
@@ -75,19 +46,12 @@ export default function Form(props) {
             clear data
           </button>
         </div>
-        <CoverForm formData={formData} changeFormData={changeFormData} />
+        <CoverForm />
         <AboutForm />
-        <ContactForm
-          contactData={contactData}
-          changeContactData={changeContactData}
-        />
+        <ContactForm />
         {workForms}
         {educationForms}
-        <Skillsform
-          skillsData={skillsData}
-          changeskillsData={changeskillsData}
-          addSkill={addSkill}
-        />
+        <Skillsform />
       </div>
     </div>
   );

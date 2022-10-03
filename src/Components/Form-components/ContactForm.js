@@ -1,7 +1,10 @@
 import Section from "./Section";
 import InputText from "./InputText";
-export default function ContactForm(props) {
-  const { changeContactData, contactData } = props;
+import { dataContext } from "../../dataContext";
+import { useContext } from "react";
+
+export default function ContactForm() {
+  const { changeContactData, contactData } = useContext(dataContext);
   const { phone, email, address1, address2, nationality, age } = contactData;
   return (
     <>

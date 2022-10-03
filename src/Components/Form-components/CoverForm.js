@@ -1,7 +1,10 @@
 import Section from "./Section";
 import InputText from "./InputText";
-export default function CoverForm(props) {
-  const { changeFormData, formData } = props;
+import { dataContext } from "../../dataContext";
+import { useContext } from "react";
+
+export default function CoverForm() {
+  const { changeFormData, formData } = useContext(dataContext);
   const { firstName, lastName, position } = formData;
   return (
     <>

@@ -1,5 +1,8 @@
-export default function Cover(props) {
-  const { formData } = props;
+import { dataContext } from "../../dataContext";
+import { useContext } from "react";
+
+export default function Cover() {
+  const { formData } = useContext(dataContext);
   const { firstName, lastName, position } = formData;
 
   return (
