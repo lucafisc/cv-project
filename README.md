@@ -1,70 +1,102 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+<h1 align="center">Welcome to CV Generator 👋 🗒️</h1>
+</p>
 
-## Available Scripts
 
-In the project directory, you can run:
+  <img alt="Version" src="https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
 
-### `npm start`
+<p align="center">
+<img src="https://i.imgur.com/enykdwR.png" alt="drawing" width="300"/>
+</p>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+> An application to create your own CV
+> 
+> This is a solution to the [CV Application Project of the Odin Project](https://www.theodinproject.com/lessons/node-path-javascript-cv-application).
+> 
+> ### 🏠 [Demo link](https://lucafisc.github.io/cv-project/)
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Table of contents
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+- [Features](#features)
+- [Process](#process)
+    - [Built with](#built-with)
+    - [Features to be implemented](features-to-be-implemented)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
+- [Install](#install)
+- [Usage](#usage)
+- [Run tests](#run-tests)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Overview
 
-### `npm run eject`
+### The challenge
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Users should be able to:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Add or remove sections
+- Save their work in local storage
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+### Screenshot
+<img src="https://i.imgur.com/v88MOK5.png" alt="drawing" width="500"/>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Features
+* Automatically hide empty sections
+* Background selector
+* Autofill with sample data
 
-### Code Splitting
+## Process
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Built with
 
-### Analyzing the Bundle Size
+- [React](https://reactjs.org/) - JS library
+- State management using Context
+- React Hooks
+- Semantic HTML5 markup
+- CSS custom properties
+- CSS Grid
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Features to be implemented
 
-### Making a Progressive Web App
+- [ ] Mobile version
+- [ ] Improve download functionality
+- [ ] Multipage option
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Author
 
-### Advanced Configuration
+👤 **Luca Fischer**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+* Github: [@lucafisc](https://github.com/lucafisc)
 
-### Deployment
+## Acknowledgments
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+* Fonts used are [Karrik](https://velvetyne.fr/fonts/karrik/) and [Minipax by Velvetyne](https://velvetyne.fr/fonts/minipax/)
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Install
+
+```sh
+npm install
+```
+
+## Usage
+
+```sh
+npm run start
+```
+
+## Run tests
+
+```sh
+npm run test
+```
